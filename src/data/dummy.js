@@ -585,7 +585,7 @@ export const cartData = [
   },
 ];
 
-export const chatData = [
+export const notificationData = [
   {
     image:
       avatar2,
