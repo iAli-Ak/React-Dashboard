@@ -19,7 +19,7 @@ const Notifications = () => {
 <div className='ml-3'>
   {notificationData.map((item, index) => (
     <div key={index}
-         className='flex mt-4 cursor-pointer hover:bg-gray-100 rounded-md'>
+         className='flex mt-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-500 rounded-md'>
       <img src={item.image}  className='w-12 h-12 rounded-full'/>
       <div className='flex flex-col ml-3'>
       <p className='font-semibold text-sm'>{item.message}</p>

@@ -29,7 +29,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { chat, setChat, notification, setNotification, activeCart, setActiveCart, searchBar, setSearchBar, currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize } = useStateContext();
+  const { user, setUser, chat, setChat, notification, setNotification, activeCart, setActiveCart, searchBar, setSearchBar, currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -64,7 +64,7 @@ const Navbar = () => {
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            onClick={() => handleClick('userProfile')}
+            onClick={() => setUser(!user)}
           >
             <img
               className="rounded-full w-8 h-8"
@@ -84,7 +84,7 @@ const Navbar = () => {
         {activeCart && (<Cart />)}
         {chat && (<Chat />)}
         {notification && (<Notification />)}
-        {isClicked.userProfile && (<UserProfile />)}
+        {user && (<UserProfile />)}
       </div>
     </div>
   );

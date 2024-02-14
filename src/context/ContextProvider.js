@@ -26,6 +26,7 @@ export const ContextProvider = ({ children }) => {
     const [searchBar, setSearchBar] = useState(false);
     const [notification, setNotification] = useState(false);
     const [chat, setChat] = useState(false);
+    const [user, setUser] = useState(true);
 
     const setMode = (e) => {
         setCurrentMode(e.target.value);
@@ -45,7 +46,8 @@ export const ContextProvider = ({ children }) => {
         <StateContext.Provider value={{activeMenu, setActiveMenu, isClicked, seIsClicked,
          handleClick, screenSize, setScreenSize, currentColor,
           currentMode, themeSettings, setThemeSettings, setMode, setColor,
-           activeCart, setActiveCart, searchBar, setSearchBar, notification, setNotification, chat, setChat}}>
+           activeCart, setActiveCart, searchBar, setSearchBar, notification,
+            setNotification, chat, setChat, user, setUser}}>
             {children}
         </StateContext.Provider>
     )

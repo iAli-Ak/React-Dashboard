@@ -19,13 +19,13 @@ const Chat = () => {
 <div className='ml-3'>
   {notificationData.map((item, index) => (
     <div key={index}
-         className='flex mt-4 cursor-pointer hover:bg-gray-100 rounded-md'>
+         className='flex mt-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-500 rounded-md'>
       <img src={item.image}  className='w-12 h-12 rounded-full'/>
       <div className='flex flex-col ml-3'>
       <p className='font-semibold text-sm'>{item.message}</p>
       <p className='text-xs font-bold text-gray-400 dark:'>{item.desc}</p>
       <p className='text-xs font-bold text-gray-400'>{item.time}</p>
-      <div className='flex-col border-t-1 border-color mt-1' />
+      <div className='flex-col border-t-1 border-black-200 mt-1' />
       </div>
     </div>
   ))}
