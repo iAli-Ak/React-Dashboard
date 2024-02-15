@@ -585,6 +585,34 @@ export const cartData = [
   },
 ];
 
+export const chatAppData = [
+  {
+    image:avatar,
+    name:'John Doe',
+    jobTitle:'Theme Developer',
+    status: 'Active'
+  },
+  {
+    image:avatar2,
+    name:'Maria Smith',
+    jobTitle:'Hacker',
+    status: 'Away'
+  },
+  {
+    image:avatar3,
+    name:'mike  litorus',
+    jobTitle:'Accountant',
+    status: 'busy'
+  },
+  {
+    image:avatar4,
+    name:'Tony Stark',
+    jobTitle:'Graphic Designer',
+    status: 'Active'
+  },
+
+];
+
 export const notificationData = [
   {
     image:
