@@ -8,7 +8,7 @@ import { GridComponent, ColumnsDirective,
   
 const Customers = () => {
   return (
-    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl dark:bg-gray-700'>
       <Header category="Page" title="Customers" />
       <GridComponent
       dataSource={customersData}

@@ -26,7 +26,7 @@ export const ContextProvider = ({ children }) => {
     const [searchBar, setSearchBar] = useState(false);
     const [notification, setNotification] = useState(false);
     const [chat, setChat] = useState(false);
-    const [user, setUser] = useState(true);
+    const [user, setUser] = useState(false);
 
     const setMode = (e) => {
         setCurrentMode(e.target.value);

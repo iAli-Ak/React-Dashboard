@@ -24,6 +24,12 @@ const App = () => {
     
   return (
     <div className={currentMode === 'Dark' ? 'dark' : 'light'}>
+    {console.log(currentMode)}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href={`https://cdn.syncfusion.com/ej2/22.1.34/${currentMode === 'Light' ? 'tailwind' : 'tailwind-dark'}.css`}
+      />
         <BrowserRouter>
         <div className='flex relative dark:bg-main-dark-bg'>
             <div className='fixed right-4 bottom-4' style={{zIndex: '1000'}}>
