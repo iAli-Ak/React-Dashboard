@@ -2,8 +2,9 @@ import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked, Pie, Button, SparkLine } from '../components';
-import {earningData, SparklineAreaData, ecomPieChartDat } from '../data/dummy';
+import {earningData, SparklineAreaData, ecomPieChartDat, recentTransactions, weeklyStats, productsPerformance } from '../data/dummy';
 import { useStateContext } from '../context/ContextProvider';
+import ProgressBar from '../components/ProgressBar';
 
 
 const Ecommerce = () => {
@@ -52,7 +53,118 @@ const Ecommerce = () => {
 
         </div>
       </div>
+      <div className='flex gap-10 flex-wrap justify-center'>
+      <div className='bg-white 
+        dark:text-gray-200
+        dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780'>
+      <p className='font-semibold text-xl'>Recent Transactions</p>
+      <div className='mt-10'>
+        {recentTransactions.map((item, index) => (
+          <div
+          key={index}
+          className='flex ml-4 mr-4 mt-5 transition duration-150 ease-in-out'>
+          
+          <button type='button'
+            style={{ color: item.iconColor,
+            backgroundColor: item.iconBg }}
+            className="text-2xl opacity-0.9 rounded-2xl p-4 hover:drop-shadow-xl h-15">
+              {item.icon}
+            </button>
+            <div className='flex ml-5'>
+            <div className='flex flex-col'>
+              <p className='text-md font-semibold'>{item.title}</p>
+              <p className='text-md font-light text-gray-400'>{item.desc}</p>
+              
+            </div>
+            </div>
+            <div className='ml-auto mr-4'>
+            <p className={`text-${item.pcColor}`}>{item.amount}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className='flex-col border-t-1 border-black-200 mt-5' />
+      <div className='ml-5 mt-5'>
+      <Button 
+            color="white"
+            bgColor={currentColor}
+            text="Add"
+            borderRadius="10px"
+            size="md" />
+            <div className='float-right mt-3'>
+          <p className='text-gray-400'>20 Recent Transactions</p>
+      </div>
+      </div>
+  
+      </div>
+      </div>
+      <div className='flex gap-10 flex-wrap justify-center'>
+      <div className='bg-white 
+        dark:text-gray-200
+        dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780'>
+      <p className='font-semibold text-xl'>Products Performance</p>
+      <div className='mt-10'>
+        {productsPerformance.map((item, index) => (
+          <div
+          key={index}
+          className='flex ml-4 mr-4 mt-5 transition duration-150 ease-in-out '>
+            <img src={item.image} className='h-15 w-28 rounded-2xl' />
+            <div className='flex ml-5'>
+            <div className='flex flex-col'>
+              <p className='text-md font-semibold'>{item.title}</p>
+              <p className='text-md font-light text-gray-400'>{item.desc}</p>
+              
+            </div>
+            </div>
+            <div className='ml-auto mr-4'>
+            <p className='mb-2 ml-2'>{item.rating}</p>
+              <ProgressBar percentageValue={item.itemSold} />
+              <p className='text-xs text-gray-400 mt-2 ml-2'>{`${item.itemSold} sold`}</p>
+            </div>
+            <div className='ml-4 mt-2'>
+              <p className='text-sm text-gray-400'>Earnings</p>
+              <p className='font-semibold mt-1'>{item.earningAmount}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+                  
+      </div>
+      </div>
 
+      <div className='flex gap-10 flex-wrap justify-center'>
+      <div className='bg-white 
+        dark:text-gray-200
+        dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780'>
+      <p className='font-semibold text-xl'>Weekly Stats</p>
+      <div className='mt-10'>
+        {weeklyStats.map((item, index) => (
+          <div
+          key={index}
+          className='flex ml-4 mr-4 mt-5 transition duration-150 ease-in-out'>
+          
+          <button type='button'
+            style={{ color: item.iconColor,
+            backgroundColor: item.iconBg }}
+            className="text-2xl opacity-0.9 rounded-2xl p-4 hover:drop-shadow-xl h-15">
+              {item.icon}
+            </button>
+            <div className='flex ml-5'>
+            <div className='flex flex-col'>
+              <p className='text-md font-semibold'>{item.title}</p>
+              <p className='text-md font-light text-gray-400'>{item.desc}</p>
+              
+            </div>
+            </div>
+            <div className='ml-auto mr-4'>
+            <p className={`text-${item.pcColor}`}>{item.amount}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+                  
+      </div>
+      </div>
       <div className='flex gap-10 flex-wrap justify-center'>
         <div className='bg-white 
         dark:text-gray-200

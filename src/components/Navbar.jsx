@@ -52,7 +52,7 @@ const Navbar = () => {
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
-    <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
+    <div className="fixed flex justify-between p-2 md:ml-6 md:mr-6 relative">
     <div className="flex flex-col md:flex-row items-center">
     <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
     <NavButton title="Search" customFunc={() => setSearchBar(true)} color={currentColor} icon={<CiSearch />} />
